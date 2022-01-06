@@ -1,3 +1,14 @@
+
+
+#if defined(WIN32) || defined(_WIN32)
+    #define _CRT_SECURE_NO_WARNINGS    
+
+    #include <Windows.h>
+    #define iswhitespace(ch) isblank(ch)
+#else 
+    #include <unistd.h>
+#endif
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -10,13 +21,6 @@
 #include <signal.h> //Segv handling.
 
 #pragma once
-
-#if defined(WIN32) || defined(_WIN32)
-    #include <Windows.h>
-    #define iswhitespace(ch) isblank(ch)
-#else 
-    #include <unistd.h>
-#endif
 
 #define bool _Bool
 #define true 1
