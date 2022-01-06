@@ -4,6 +4,9 @@
     #define _CRT_SECURE_NO_WARNINGS    
 
     #include <Windows.h>
+    #include <process.h>
+
+    #define getpid() _getpid()
     #define iswhitespace(ch) isblank(ch)
 #else 
     #include <unistd.h>
